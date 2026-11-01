@@ -1,0 +1,364 @@
+{
+  "source": "Caho1/open-claude-ui",
+  "packageVersion": "1.0.0",
+  "snapshot": "local source archive supplied for claude-design",
+  "fileCount": 71,
+  "totalBytes": 1215590,
+  "files": [
+    {
+      "path": ".cursorrules",
+      "bytes": 558,
+      "sha256": "71a62cdd0e8fb0a2b57729b589ca35acfc3b8d9b9b284e2361d7409d22993d70"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "bytes": 647,
+      "sha256": "6ebc9a394e1da9aaf87434b703e3f9b59fcefd9c9a48cd796c93d8f77edfac9e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 121,
+      "sha256": "45e369bb2e533678e39b5fbea685826d1fadf418cd16bce02ea25a901f6c9a39"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 15606,
+      "sha256": "e40c31313ae03418a1a1c75666de3842441471aea9beee5dcd84339e13026421"
+    },
+    {
+      "path": "assets/images/logo.svg",
+      "bytes": 733,
+      "sha256": "07f3842ce50371bf0342ed4b22ce02b117f34e457e7b86803a1b1cc14f47563e"
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 1520,
+      "sha256": "1f533306d8260980c2b7e4493d344c11d31735025f31bc72dc89ef01b35574fc"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 22144,
+      "sha256": "17f0d36e13b8d6fbe53d04823afaadbfa3ebabb944b40b39c6cc944f66a4bb7d"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 1459,
+      "sha256": "6eeba1d21dbbc3aa44175c778d28519e61b106905cf196842f359415ca7bd041"
+    },
+    {
+      "path": "code-examples/ArtifactsSplitPaneResizer.tsx",
+      "bytes": 9211,
+      "sha256": "b271d4d719b2863f7fd82815351253a4e8b697836129872f3fd141b857f065b3"
+    },
+    {
+      "path": "code-examples/AttachmentCard.tsx",
+      "bytes": 7445,
+      "sha256": "53e17cdb3f6164e56bd4ca45e96647fc59b2eb43e8f7a0ed413c5c644b2d3b0b"
+    },
+    {
+      "path": "code-examples/cds-theme.css",
+      "bytes": 35182,
+      "sha256": "168f9804f3b32fccd7fc3c5df9602bd317843a96b4742c6258ac1e2e2e6a6677"
+    },
+    {
+      "path": "code-examples/CdsButton.tsx",
+      "bytes": 5808,
+      "sha256": "d387f50f343ef15522013f53191adcc71e1a218d2a858673ce096efa203fa339"
+    },
+    {
+      "path": "code-examples/CdsMotionEngine.tsx",
+      "bytes": 2912,
+      "sha256": "e6a87f8d4e81cfecc1f006ae369366063ddcb305b08de403a8a772c3ee570dbb"
+    },
+    {
+      "path": "code-examples/ChatComposer.tsx",
+      "bytes": 12394,
+      "sha256": "573d47a44cb0f314b4967cc556f6eab60802fa7ffd20cc0b55d134cfa0264b0e"
+    },
+    {
+      "path": "code-examples/ChatComposerChin.tsx",
+      "bytes": 2642,
+      "sha256": "c82db4397ba8743b35e18b056357863a1c1990f8cd93d698a22638e33dcdf6f9"
+    },
+    {
+      "path": "code-examples/ChatMessageBubbles.tsx",
+      "bytes": 18030,
+      "sha256": "2ca7e2ef08d3c1a08cec60bb58a5cb563114fc310309e7552b613bb8ce9fe066"
+    },
+    {
+      "path": "code-examples/ClaudeAudioPlayer.ts",
+      "bytes": 5177,
+      "sha256": "c47a36cfface1f13039de6bf45a8a0f7dd84c5f66aace96de61a5a825efe5fde"
+    },
+    {
+      "path": "code-examples/ClaudeDesktopHeader.tsx",
+      "bytes": 3127,
+      "sha256": "47aa96876470fdaff7a6c9e0a64fc6be541e528cdc0f1a721e02b8272cb6a596"
+    },
+    {
+      "path": "code-examples/ClaudeMotionPresets.ts",
+      "bytes": 5617,
+      "sha256": "e5841ca092a724af4d3a3df49f26721f33bd66bf04f6597ac42fe97e565e10b4"
+    },
+    {
+      "path": "code-examples/CodeBlock.tsx",
+      "bytes": 3734,
+      "sha256": "6c039c555ac0976385a2c743164bcccb0bc624c3ab9d508f86731516fa182c0f"
+    },
+    {
+      "path": "code-examples/ConfirmationDialog.tsx",
+      "bytes": 5640,
+      "sha256": "91ae8ff10fc20214f4f2df2b511427827d138ffc833acb502f5f89b1be62638b"
+    },
+    {
+      "path": "code-examples/ContainerResponsiveBar.tsx",
+      "bytes": 2470,
+      "sha256": "5dee302bbc2eaabebb6f4dd18c1a76447dc510c244cd6526019ae7a63a997455"
+    },
+    {
+      "path": "code-examples/CoworkAgentCanvas.tsx",
+      "bytes": 12759,
+      "sha256": "2d4fbbf081dcbb5364bc433b37fa62280a62efe39307d91b842c093621d7b433"
+    },
+    {
+      "path": "code-examples/createClaudeMainWindow.ts",
+      "bytes": 3222,
+      "sha256": "69daa820de305a08acee7481d1d3fc8c5c3a0fc46c91982e949b84f3f14afbd4"
+    },
+    {
+      "path": "code-examples/DraggableSessionList.tsx",
+      "bytes": 16142,
+      "sha256": "5a89d25bb9757f0dcdce9575342a7c3be62b20f4abad5e20da633144d05fd47e"
+    },
+    {
+      "path": "code-examples/EpitaxyIframeBridge.tsx",
+      "bytes": 3705,
+      "sha256": "a3985008f7d39a53cd6b950fc395f4569ab76a68b77c11374b6bed7ee56b2599"
+    },
+    {
+      "path": "code-examples/LiveMicActivityBars.tsx",
+      "bytes": 6529,
+      "sha256": "fdb2084e04ac6b270eba8ed35f206e832b0b03bcb2b36fcf2581832ad9b483d4"
+    },
+    {
+      "path": "code-examples/McpToolDecisionCard.tsx",
+      "bytes": 10569,
+      "sha256": "2f9b3c2bae3318bb02573d35da7d1bbb1a667785fc960471705e0265cdee550a"
+    },
+    {
+      "path": "code-examples/MediaLightboxViewer.tsx",
+      "bytes": 20570,
+      "sha256": "2df4633b9b553f2ca99e624514584028340d6e2ba38b90624e09c9a32a1db876"
+    },
+    {
+      "path": "code-examples/ModelSelectorEffort.tsx",
+      "bytes": 5008,
+      "sha256": "691bf18dec7b4015765346990f0bcc9b7d0cc1d91c8cf4f3bd30971effa36bf0"
+    },
+    {
+      "path": "code-examples/ModelSwitcherWithTokenGauge.tsx",
+      "bytes": 14130,
+      "sha256": "448f521799878abfc85bc0b1231646737216c7226af07a9abcec20d5e592a465"
+    },
+    {
+      "path": "code-examples/ReasoningAmbientGlow.tsx",
+      "bytes": 7935,
+      "sha256": "3b37089427b54c31f619b1a109c0f67a72c5f9ea72f100bed7ab0ea314d5f3fa"
+    },
+    {
+      "path": "code-examples/RichComposerWithMentions.tsx",
+      "bytes": 19870,
+      "sha256": "2b6d13d7f0b94479dd0a49d5fae8e59480131a498422e2b2b3e0e6b455916fec"
+    },
+    {
+      "path": "code-examples/ScrollFadeContainer.tsx",
+      "bytes": 6360,
+      "sha256": "8df970ee3f649281e4be4cf4e0122c931f83a76c54e298c9affbb5053aa3de5f"
+    },
+    {
+      "path": "code-examples/SegmentedControl.tsx",
+      "bytes": 5876,
+      "sha256": "556ddc843ca7984a5666287aedf34e1705ccbd1b45d10c9ec1fd1222af954d0f"
+    },
+    {
+      "path": "code-examples/StatusIndicators.tsx",
+      "bytes": 4918,
+      "sha256": "9a138c069eb3b31c64efd7af5f99e1aeafc0cb1171c2feff8b5e6b8b98fee4ed"
+    },
+    {
+      "path": "code-examples/StreamingDiffViewer.tsx",
+      "bytes": 15538,
+      "sha256": "b086e9a24c1e32e09d20e7636d971efa8f479175ae4c62c2bd52a84c6153e954"
+    },
+    {
+      "path": "code-examples/tailwind.config.js",
+      "bytes": 3058,
+      "sha256": "bda3e7b45ccc7a38368c296abad930f2bd6e89681cbdb116fba8b21c5bbb7e22"
+    },
+    {
+      "path": "code-examples/ThinkingAccordion.tsx",
+      "bytes": 5908,
+      "sha256": "d260f2de6a9e3751b1606cc8d74023561716161df6f6c506ef9343f6060ee3c2"
+    },
+    {
+      "path": "code-examples/useClaudeRovingFocus.ts",
+      "bytes": 2987,
+      "sha256": "a318504d7dc22983852621db66242c657db0f1f0d6dcff3dfd56ad400e552ac8"
+    },
+    {
+      "path": "code-examples/useClaudeScrollPinning.ts",
+      "bytes": 2220,
+      "sha256": "98a36dc6ef4ed790e4935d1ff424b224b718df2f23f4126a130ae113ddb7a212"
+    },
+    {
+      "path": "code-examples/useClaudeSharedElementTransition.ts",
+      "bytes": 6958,
+      "sha256": "9d9922d87d3d54ee5d513e0ed969c1bce5f96a6edf1646864495a22db6eaf8ce"
+    },
+    {
+      "path": "code-examples/useRateLimitBackoff.ts",
+      "bytes": 3143,
+      "sha256": "8278b7f10b975b0f97ec0d436319b1ac64b009ad119647bb4421a4de3612e04f"
+    },
+    {
+      "path": "docs/claude-components-storybook.html",
+      "bytes": 243739,
+      "sha256": "b93d05ffb6ea871b7e131c095ffe8254093adb9bfc897f29093e6b199fb11c60"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 4043,
+      "sha256": "143054c8bec7e2d9833fffd19a0e9e685832ec0fbe361ae56018c2922cde31be"
+    },
+    {
+      "path": "docs/v1/01-设计哲学与设计令牌体系.md",
+      "bytes": 41991,
+      "sha256": "05975f3967e3bf1840d868e34b607d36b0d8eb78addefc1bb783fba73e1d4923"
+    },
+    {
+      "path": "docs/v1/02-基础原子组件与交互控件.md",
+      "bytes": 20508,
+      "sha256": "ccc0d1ae1c8de00cd313daf6963304b061db3fba985bd045bcf9e93dd4d10ed1"
+    },
+    {
+      "path": "docs/v1/03-会话核心流与指令交互引擎.md",
+      "bytes": 21002,
+      "sha256": "8da7065deabc1c92c00f1f4260f6aab82b5ceea4e2f4240d5748489c13a7af44"
+    },
+    {
+      "path": "docs/v1/04-动效物理学、着色器与环境光影.md",
+      "bytes": 16539,
+      "sha256": "e1c139391e8f8558903ccad2aa33e4e30890575c048241ef3456aba087ca3ce0"
+    },
+    {
+      "path": "docs/v1/05-视听多媒体与产物交互物理学.md",
+      "bytes": 29394,
+      "sha256": "8e5e1df96055908a496fff79925cfd1813897c3d77d74dafa30045596166c7e6"
+    },
+    {
+      "path": "docs/v1/06-系统级桌面架构与协作拓扑.md",
+      "bytes": 22604,
+      "sha256": "9b3652b46dbf350671e779cd4d35c04820902b9a7af4de2b92208e0dde0ef713"
+    },
+    {
+      "path": "docs/v1/07-工程配置与资产代码库总览.md",
+      "bytes": 23605,
+      "sha256": "2bad15877e75ea1415484979301b9cd507c95dfa68817f5bbb31c906dca00ed6"
+    },
+    {
+      "path": "docs/v1/08-AI-Agent-前端-UI-与动效开发指南.md",
+      "bytes": 14132,
+      "sha256": "1e0a042e7ca0c073c36befa4c8cb06e9cc4fad396873c925860e009da3e6e24c"
+    },
+    {
+      "path": "docs/v1/Claude Design System (CDS).full.md",
+      "bytes": 235341,
+      "sha256": "5f56ede056a52d9cfa320bbafd56cf6ae6d4fb56caf35cf9dad068df2a8ead23"
+    },
+    {
+      "path": "docs/v1/README.md",
+      "bytes": 6970,
+      "sha256": "86f8a4064f5434c03996a60e2b8862e9f990f1ae4e4e25d151fa847486beb65b"
+    },
+    {
+      "path": "docs/v2/01-综述与版本边界.md",
+      "bytes": 4903,
+      "sha256": "793b2c225a5c2cb7bb22b2ccc051d3983d550c8400cb84b36c1bf8bec00d4783"
+    },
+    {
+      "path": "docs/v2/02-新增特性深度逆向.md",
+      "bytes": 9537,
+      "sha256": "f8f39920ef40e3b4264cbbc18548699df800f6c6f913c063438d7e7adff72945"
+    },
+    {
+      "path": "docs/v2/03-架构重构与对比分析.md",
+      "bytes": 13300,
+      "sha256": "b51a19ebaa37df20501d7be4490dcd50e26139c03657d3566761d39ca0dbdd48"
+    },
+    {
+      "path": "docs/v2/04-系统底座全景解密.md",
+      "bytes": 3383,
+      "sha256": "db253d6d750b1a7529dfaee21e250d4d9356782ba0f6adf1ce11a774ff3a45e2"
+    },
+    {
+      "path": "docs/v2/05-生产级参考实现代码.md",
+      "bytes": 11602,
+      "sha256": "a6abf46f3c3b63b67a4de6f999cc1b80a6d1084d037925af6c6e903da851f311"
+    },
+    {
+      "path": "docs/v2/06-总结与升格意义.md",
+      "bytes": 1027,
+      "sha256": "c0956c9fbeb4e154d576c67a6113277fcb85a8bf8cc5bc47c6477159c364fc36"
+    },
+    {
+      "path": "docs/v2/Claude-Desktop-2.0-全量分析.full.md",
+      "bytes": 47053,
+      "sha256": "1c6ae475cc2e928d9d598ebc61f908b9e86c754bd509992d186c60151e7adc2c"
+    },
+    {
+      "path": "docs/v2/README.md",
+      "bytes": 5688,
+      "sha256": "9a4d2f6d2744bd2a9cdb0fb2873adae1fdde5352493a17a0896e210d17fc6b68"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1062,
+      "sha256": "623d6fdcde280ee7294f9b8a79a22cb16eaf2b20940358aaeff787f8912cd2c9"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 37353,
+      "sha256": "7fae37529e85b238b9179e4492a443761c82cb76398df80caea5d4985ab7e9a1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1108,
+      "sha256": "0e12cc36b0062e214c9b6fa696f6d45433445890cb1a4f96972683a1bc833411"
+    },
+    {
+      "path": "README-en.md",
+      "bytes": 29504,
+      "sha256": "0379726e3fbf421010b7510a49f0f415644763dfd58bd9581ca2596b4d8182c5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27652,
+      "sha256": "97d602ed57378e3ab6ad709888175719780a782aad2d9dbdb373c7e155c36898"
+    },
+    {
+      "path": "src/index.ts",
+      "bytes": 2254,
+      "sha256": "db5b93468575cd2d5382e491cef934ac08cc6bb77929a9ff1193bad5754e6735"
+    },
+    {
+      "path": "src/types.d.ts",
+      "bytes": 173,
+      "sha256": "40963c07b45a41f63d8f7a1d2a19ce9a528bc1c5a675d2d213df84de67624582"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 541,
+      "sha256": "e904dbc5e88483f4e90ed89f0f555f6b8193367ff45c8c2244f6874d7ea5e4be"
+    }
+  ]
+}

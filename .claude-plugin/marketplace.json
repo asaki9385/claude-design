@@ -1,0 +1,27 @@
+{
+  "name": "claude-design",
+  "owner": {
+    "name": "asaki9385",
+    "url": "https://github.com/asaki9385"
+  },
+  "metadata": {
+    "description": "Claude Design: an installable Claude Design System skill with component source, tokens, motion specs, and an offline demo."
+  },
+  "plugins": [
+    {
+      "name": "claude-design",
+      "source": "./plugins/claude-design",
+      "displayName": "Claude Design",
+      "description": "Claude 设计系统（CDS）：33 个 React/TS 模块、四层表面令牌、弹簧物理参数与硬性约束，可打成零外部请求的单文件 HTML。",
+      "category": "design",
+      "tags": [
+        "design-system",
+        "react",
+        "tailwind",
+        "motion",
+        "claude"
+      ]
+    }
+  ]
+}
+

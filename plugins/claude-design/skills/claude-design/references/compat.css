@@ -1,0 +1,110 @@
+# compatibility layer — 补齐上游未随附的令牌与工具类
+
+上游仓库把组件从生产环境里摘出来时，**没有一起带出** 17 个 CSS 变量和 11 个 Tailwind 工具类。不补的话，组件能跑，但会出现：分段控件的滑块"瞬移"而不是滑动、正文用回默认字体、阴影消失、部分变量 `var()` 求值为空。
+
+引入顺序：`cds-theme.css` → `compat.css`。
+
+> 下面所有**带「推导」标注**的值，是我按 CDS 其余令牌与官方视觉推出来的合理值，不是上游原值。它们只影响"缺省长得对不对"，不影响布局结构。
+
+## 1. 组件引用但未定义的变量
+
+```css
+:root {
+  /* —— 时间与间距（推导） —— */
+  --cds-dur-fast: 120ms;   /* 几何咬合 */
+  --cds-dur-snap: 120ms;   /* 滑块/开关落位，SegmentedControl 依赖 */
+  --cds-dur-slow: 300ms;   /* 面板滑入 */
+  --cds-pad-md: 12px;
+  --cds-pad-lg: 16px;
+
+  /* —— 语义令牌（推导） —— */
+  --cds-radius: 8px;                        /* 大量组件拿它算气泡/卡片圆角 */
+  --cds-surface: var(--cds-surface-1);      /* ChatComposerChin / ModelSelectorEffort 的浮层底 */
+  --cds-bg-neutral: var(--cds-fill-secondary);
+  --cds-bg-neutral-hover: var(--cds-fill-secondary-hover);
+  --cds-bg-tertiary: var(--cds-surface-3);
+  --cds-fill-accent: var(--cds-clay);
+  --cds-fill-accent-subtle: var(--cds-clay-light);
+  --cds-fill-badge-neutral: var(--cds-fill-secondary);
+  --cds-accent: var(--cds-clay);
+  --cds-button-on-content: rgba(0, 0, 0, 0.5);
+  --cds-button-on-content-hover: rgba(0, 0, 0, 0.7);
+  --cds-skeleton-sheen: rgba(255, 255, 255, 0.25);
+}
+
+.dark,
+[data-mode='dark'] {
+  --cds-fill-accent-subtle: rgba(217, 119, 87, 0.15);
+  --cds-button-on-content: rgba(255, 255, 255, 0.5);
+  --cds-button-on-content-hover: rgba(255, 255, 255, 0.7);
+  --cds-skeleton-sheen: rgba(255, 255, 255, 0.10);
+}
+```
+
+`--cds-radius`、`--cds-dur-snap`、`--cds-fill-accent`、`--cds-bg-neutral`、`--cds-bg-neutral-hover` 这 **5 个在组件源码里没有 fallback**，不定义就会让对应属性整条失效（背景透明、过渡时长 0、圆角塌成直角）。另外 `cds-theme.css` 自己在 `.cds-btn-squish` 里引用了 `--cds-dur-fast` / `--cds-dur-slow`，同样没有兜底。
+
+## 2. 组件引用但未定义的工具类
+
+```css
+/* 文字 */
+.text-heading { font-size: .9375rem; line-height: 1.5; letter-spacing: -.006em; }
+.text-body    { font-size: .875rem;  line-height: 1.6; }
+.font-control { font-size: .8125rem; line-height: 1.35; letter-spacing: -.003em; }
+.font-header  { font-family: inherit; letter-spacing: -.01em; }
+
+/* 阴影 */
+.shadow-field { box-shadow: 0 0 0 1px var(--cds-border), 0 1px 2px rgba(0, 0, 0, .04); }
+.shadow-focus { box-shadow: var(--cds-focus-shadow); }
+
+/* 间距 */
+.gap-xs { gap: 4px; }
+
+/* 过渡时长（Tailwind 默认刻度里没有这两个） */
+.duration-fast { transition-duration: 120ms; }
+.duration-120  { transition-duration: 120ms; }
+
+/* 非标准取值，旧版 Tailwind 不会生成 */
+.opacity-35 { opacity: .35; }
+.outline-hidden { outline: 2px solid transparent; outline-offset: 2px; }
+```
+
+> `CdsButton` 里还用了 `shadow-2xs`、`shadow-xs`、`rounded-card`、`bg-clay`——这些是 Tailwind **3.4+** 才有的；若项目仍在 3.3 及更早，需要升级或自行补。签名的 `focus-visible:outline-hidden` 是 Tailwind **v4** 语法，v3 里等价于 `outline-none`。
+
+## 3. SegmentedControl 的容器折叠（可选）
+
+组件本身已用内联 style 定位滑块，**不引这段也能正常滑动**——它只缺 `.duration-120`（见上）。但手册第 2.2.2 节描述的"窄容器自动折叠未激活项标签"并没有实现在组件里，需要时把下面这段贴上（轨道已带 `container-type: inline-size`）：
+
+```css
+/* 两项：容器 <= 180px 时，非激活项只留图标 */
+@container (width <= 180px) {
+  .df-pills[data-pills='2'] .df-pill:not([data-active]) .df-pill-label { display: none; }
+  .df-pills[data-pills='2'] .df-pill:not([data-active]) { padding: 0; }
+  .df-pills[data-pills='2'] .df-pill[data-active] { flex: none; padding: 0 16px; }
+}
+/* 三项：<= 254px */
+@container (width <= 254px) {
+  .df-pills[data-pills='3'] .df-pill:not([data-active]) .df-pill-label { display: none; }
+  .df-pills[data-pills='3'] .df-pill:not([data-active]) { padding: 0; }
+  .df-pills[data-pills='3'] .df-pill[data-active] { flex: none; padding: 0 16px; }
+}
+```
+
+注意组件渲染的 `<button>` 上只有 `role="tab"` 与 `aria-selected`，**没有 `data-active` 属性**——要用上面这段，得先给激活项补 `data-active`。
+
+## 4. 没有随附的组件：Switch / Toggle
+
+仓库里没有独立的开关组件（`ModelSwitcherWithTokenGauge` 内部有一个，但没有导出）。做开关时按下面这套规格自建，别自由发挥：
+
+- 轨道：`h-[22px] w-[38px] rounded-full`，关 `var(--cds-fill-secondary)`，开 `var(--cds-clay)`
+- 滑块：`size-[18px] rounded-full`，`bg-white`，`shadow-sm`，左右各留 2px
+- 动效：`SPRING_BOUNCY`（+8.8% 超调，正好是"咔哒"的手感），**不要**用 `transition: all`
+- 无障碍：`role="switch"` + `aria-checked`，键盘 Space/Enter 可切
+- 危险开关（如"允许上传"关掉后不可逆）配 `ConfirmationDialog variant="danger"`
+
+## 5. 复制源码时的两个历史包袱
+
+上游组件里存在少量与 `invariants.md` 冲突的写法，属于逆向阶段的遗留，**照抄后建议顺手改掉**：
+
+- 31 处 `transition-all`：改成明确属性，如 `transition-[background-color,box-shadow]`。
+- 个别裸色值（`bg-white`、`dark:bg-[#2c2c2a]`）：`#2c2c2a` 其实就是 `--cds-segmented-thumb` 的暗色值，换成变量即可。
+- `CdsButton` 的 `danger` 变体用的是 `bg-red-600`，而系统令牌是 `--cds-fill-danger`（`#ef4444` / `#f87171`）；要严格对齐就换成变量。

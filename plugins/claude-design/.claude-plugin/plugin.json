@@ -1,0 +1,29 @@
+{
+  "name": "claude-design",
+  "displayName": "Claude Design",
+  "version": "1.1.0",
+  "description": "Claude 设计系统（CDS）组件与动效规范：33 个可拷贝的 React 模块、四层表面令牌、4 档弹簧物理参数与 10 条硬性约束，用于构建或改造 Claude 风格的界面；附带构建管线，可打成零外部请求的单文件 HTML 并做 jsdom 交互校验。",
+  "author": {
+    "name": "Caho1",
+    "url": "https://github.com/Caho1/open-claude-ui"
+  },
+  "homepage": "https://github.com/asaki9385/claude-design",
+  "repository": "https://github.com/asaki9385/claude-design",
+  "license": "MIT",
+  "keywords": [
+    "design-system",
+    "react",
+    "tailwindcss",
+    "framer-motion",
+    "ui-components",
+    "claude"
+  ],
+  "metadata": {
+    "vendoredFrom": "Caho1/open-claude-ui",
+    "packagedBy": "asaki9385",
+    "componentCount": 33,
+    "peerDependencies": "react>=18, framer-motion>=10, lucide-react>=0.280",
+    "hasBuildTooling": true,
+    "buildOutput": "零外部请求单文件 HTML（React + framer-motion + Tailwind 全内联）"
+  }
+}

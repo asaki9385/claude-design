@@ -1,0 +1,30 @@
+{
+  "name": "claude-design",
+  "version": "1.1.0",
+  "private": true,
+  "description": "An installable Claude Design System skill with 33 React/TS modules and an offline interactive demo.",
+  "type": "module",
+  "scripts": {
+    "build:storybook": "node scripts/build-storybook-offline.mjs",
+    "snapshot:update": "node scripts/update-upstream-manifest.mjs",
+    "validate": "node scripts/validate-repository.mjs",
+    "test:demo": "node plugins/claude-design/skills/claude-design/scripts/verify-bundle.mjs plugins/claude-design/skills/claude-design/assets/cds-offline-demo.html --expect \"CDS 离线单文件验证\" --expect \"CdsButton\" --expect \"SegmentedControl\" --expect \"ThinkingAccordion\" --click \"点我 +1\" --expect-after \"React 状态计数：1\"",
+    "test": "npm run build:storybook && npm run validate && npm run test:demo",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "verify": "npm test && npm run test:browser"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "0.1.1",
+    "esbuild": "0.28.2",
+    "jsdom": "27.4.0",
+    "playwright-core": "1.64.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "3.4.19"
+  },
+  "license": "MIT"
+}
+
