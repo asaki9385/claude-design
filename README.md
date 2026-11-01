@@ -46,6 +46,22 @@ plugins/claude-design/skills/claude-design/
 
 ## 安装
 
+### 直接下载并导入
+
+[下载 `claude-design.skill`](https://github.com/asaki9385/claude-design/releases/latest/download/claude-design.skill)，在支持 Agent Skills 的客户端中选择导入或上传 Skill。不同客户端的入口名称可能不同，但 `.skill` 文件本身已经包含完整的 `SKILL.md`、参考资料、脚本和离线资产。
+
+也可以下载：
+
+- [`claude-design-plugin.zip`](https://github.com/asaki9385/claude-design/releases/latest/download/claude-design-plugin.zip)：解压后直接作为 Claude Code 插件加载。
+- [`SHA256SUMS`](https://github.com/asaki9385/claude-design/releases/latest/download/SHA256SUMS)：校验下载文件。
+- [`release-manifest.json`](https://github.com/asaki9385/claude-design/releases/latest/download/release-manifest.json)：版本、提交号和产物哈希。
+
+```bash
+shasum -a 256 -c SHA256SUMS
+unzip claude-design-plugin.zip
+claude --plugin-dir ./claude-design
+```
+
 ### Claude Code 插件市场
 
 ```text
@@ -64,6 +80,8 @@ claude --plugin-dir ./plugins/claude-design
 ```
 
 ### 只安装 Skill
+
+如果下载的是 `.skill` 文件，可以直接导入支持 Agent Skills 的客户端；下面是手动安装方式。
 
 Claude Code：
 
@@ -122,6 +140,7 @@ npm test
 - `build:storybook`：从上游原始故事书抽取 CSS/JSX，内联 React、ReactDOM 和 Tailwind。
 - `test:demo`：用 jsdom 执行完整 bundle，点击按钮并断言 React 状态从 0 变为 1。
 - `test:browser`：使用本机 Chrome、Chromium 或 Edge 验证两个资产、主题/X-Ray 交互和桌面/移动端布局。
+- `package:release`：执行全部质量门禁，生成 `.skill`、插件 ZIP、SHA-256 清单和发布元数据，再重新读取压缩包逐文件比对内容。
 
 本机有 Chrome 时，一次跑完全部检查：
 

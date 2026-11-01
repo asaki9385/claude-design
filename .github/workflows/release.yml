@@ -1,0 +1,53 @@
+name: Publish release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify and package release
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: npm run package:release
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" dist/* --clobber
+            gh release edit "$RELEASE_TAG" \
+              --title "Claude Design $RELEASE_TAG" \
+              --notes-file RELEASE_NOTES.md
+          else
+            gh release create "$RELEASE_TAG" dist/* \
+              --title "Claude Design $RELEASE_TAG" \
+              --notes-file RELEASE_NOTES.md \
+              --verify-tag
+          fi
+
